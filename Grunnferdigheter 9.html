@@ -1,0 +1,167 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        .stil1
+        {
+            background-color: blueviolet;
+        }
+        .stil2
+        {
+            border: thin solid;
+        }
+        .stil3
+        {
+            border-color: blue;
+        }
+        .stil4
+        {
+            border-style: dotted;
+        }
+        .stil5
+        {
+            font-weight: bold;
+        }
+        .theSelected
+        {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div onclick="selected(this)" id="toggleStyle11">The First</div>
+    <div onclick="selected(this)" id="toggleStyle22">The Second</div>
+    <div onclick="selected(this)" id="toggleStyle33">The Third</div>
+    <div onclick="selected(this)" id="toggleStyle44">The Fourth</div>
+    <div onclick="selected(this)" id="toggleStyle55">The Fifth</div>
+
+    <input id="style1" type="checkbox" onchange="toggleStyle1()" />
+    <input id="style2" type="checkbox" onchange="toggleStyle2()" />
+    <input id="style3" type="checkbox" onchange="toggleStyle3()" />
+    <input id="style4" type="checkbox" onchange="toggleStyle4()" />
+    <input id="style5" type="checkbox" onchange="toggleStyle5()" />
+
+    <script>
+
+
+
+        function selected(clickedElement)
+        {
+            
+            clickedElement.classList.toggle('theSelected');//Selecting/deselecting elements
+            var isSelected = document.getElementById(clickedElement.id).classList.contains('theSelected'); //Check if element is selected
+
+            if (!isSelected) {
+                document.getElementById(clickedElement.id).classList.remove('stil1', 'stil2', 'stil3', 'stil4', 'stil5'); //Remove style if NOT selected (does not currently work)
+            }
+
+            var isChecked1 = document.getElementById('style1').checked; //Check if checkbox1 is checked or not, then update style when this line is selected/deselected (Add isChecked2, isChecked3, etc)
+            document.getElementById(clickedElement.id).classList.toggle('stil1', isChecked1); // also toggle stil2, still3, etc. based on isChecked2, isChecked3, etc.
+        }
+
+
+        function toggleStyle1() {
+            var isChecked = document.getElementById('style1').checked; //Check if checkbox is checked
+
+            var isSelected = document.getElementById('toggleStyle11').classList.contains('theSelected'); //If line 1 is selected
+            document.getElementById('toggleStyle11').classList.toggle('stil1', isChecked && isSelected); //and checkbox 1 is checked, give line 1 style 1, otherwise remove style 1.
+
+            isSelected = document.getElementById('toggleStyle22').classList.contains('theSelected'); //If line 2 is selected
+            document.getElementById('toggleStyle22').classList.toggle('stil1', isChecked && isSelected); //and checkbox 1 is checked, give line 2 style 1, otherwise remove style 1.
+
+            isSelected = document.getElementById('toggleStyle33').classList.contains('theSelected'); //etc.
+            document.getElementById('toggleStyle33').classList.toggle('stil1', isChecked && isSelected);
+
+            isSelected = document.getElementById('toggleStyle44').classList.contains('theSelected');
+            document.getElementById('toggleStyle44').classList.toggle('stil1', isChecked && isSelected);
+
+            isSelected = document.getElementById('toggleStyle55').classList.contains('theSelected');
+            document.getElementById('toggleStyle55').classList.toggle('stil1', isChecked && isSelected);
+        }
+
+        function toggleStyle2() {
+            var isChecked = document.getElementById('style2').checked;
+
+            var isSelected = document.getElementById('toggleStyle11').classList.contains('theSelected');
+            document.getElementById('toggleStyle11').classList.toggle('stil2', isChecked && isSelected);
+
+            isSelected = document.getElementById('toggleStyle22').classList.contains('theSelected');
+            document.getElementById('toggleStyle22').classList.toggle('stil2', isChecked && isSelected);
+
+            isSelected = document.getElementById('toggleStyle33').classList.contains('theSelected');
+            document.getElementById('toggleStyle33').classList.toggle('stil2', isChecked && isSelected);
+
+            isSelected = document.getElementById('toggleStyle44').classList.contains('theSelected');
+            document.getElementById('toggleStyle44').classList.toggle('stil2', isChecked && isSelected);
+
+            isSelected = document.getElementById('toggleStyle55').classList.contains('theSelected');
+            document.getElementById('toggleStyle55').classList.toggle('stil2', isChecked && isSelected);
+        }
+
+        function toggleStyle3() {
+            var isChecked = document.getElementById('style3').checked;
+
+            var isSelected = document.getElementById('toggleStyle11').classList.contains('theSelected');
+            document.getElementById('toggleStyle11').classList.toggle('stil3', isChecked && isSelected);
+
+            isSelected = document.getElementById('toggleStyle22').classList.contains('theSelected');
+            document.getElementById('toggleStyle22').classList.toggle('stil3', isChecked && isSelected);
+
+            isSelected = document.getElementById('toggleStyle33').classList.contains('theSelected');
+            document.getElementById('toggleStyle33').classList.toggle('stil3', isChecked && isSelected);
+
+            isSelected = document.getElementById('toggleStyle44').classList.contains('theSelected');
+            document.getElementById('toggleStyle44').classList.toggle('stil3', isChecked && isSelected);
+
+            isSelected = document.getElementById('toggleStyle55').classList.contains('theSelected');
+            document.getElementById('toggleStyle55').classList.toggle('stil3', isChecked && isSelected);
+        }
+
+
+        function toggleStyle4() {
+            var isChecked = document.getElementById('style4').checked;
+
+            var isSelected = document.getElementById('toggleStyle11').classList.contains('theSelected');
+            document.getElementById('toggleStyle11').classList.toggle('stil4', isChecked && isSelected);
+
+            isSelected = document.getElementById('toggleStyle22').classList.contains('theSelected');
+            document.getElementById('toggleStyle22').classList.toggle('stil4', isChecked && isSelected);
+
+            isSelected = document.getElementById('toggleStyle33').classList.contains('theSelected');
+            document.getElementById('toggleStyle33').classList.toggle('stil4', isChecked && isSelected);
+
+            isSelected = document.getElementById('toggleStyle44').classList.contains('theSelected');
+            document.getElementById('toggleStyle44').classList.toggle('stil4', isChecked && isSelected);
+
+            isSelected = document.getElementById('toggleStyle55').classList.contains('theSelected');
+            document.getElementById('toggleStyle55').classList.toggle('stil4', isChecked && isSelected);
+        }
+
+
+        function toggleStyle5() {
+            var isChecked = document.getElementById('style5').checked;
+
+            var isSelected = document.getElementById('toggleStyle11').classList.contains('theSelected');
+            document.getElementById('toggleStyle11').classList.toggle('stil5', isChecked && isSelected);
+
+            isSelected = document.getElementById('toggleStyle22').classList.contains('theSelected');
+            document.getElementById('toggleStyle22').classList.toggle('stil5', isChecked && isSelected);
+
+            isSelected = document.getElementById('toggleStyle33').classList.contains('theSelected');
+            document.getElementById('toggleStyle33').classList.toggle('stil5', isChecked && isSelected);
+
+            isSelected = document.getElementById('toggleStyle44').classList.contains('theSelected');
+            document.getElementById('toggleStyle44').classList.toggle('stil5', isChecked && isSelected);
+
+            isSelected = document.getElementById('toggleStyle55').classList.contains('theSelected');
+            document.getElementById('toggleStyle55').classList.toggle('stil5', isChecked && isSelected);
+        }
+
+
+    </script>
+</body>
+</html>
