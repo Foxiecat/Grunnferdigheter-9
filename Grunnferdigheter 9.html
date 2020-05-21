@@ -53,14 +53,27 @@
         {
             
             clickedElement.classList.toggle('theSelected');//Selecting/deselecting elements
+
             var isSelected = document.getElementById(clickedElement.id).classList.contains('theSelected'); //Check if element is selected
 
             if (!isSelected) {
                 document.getElementById(clickedElement.id).classList.remove('stil1', 'stil2', 'stil3', 'stil4', 'stil5'); //Remove style if NOT selected (does not currently work)
             }
 
-            var isChecked1 = document.getElementById('style1').checked; //Check if checkbox1 is checked or not, then update style when this line is selected/deselected (Add isChecked2, isChecked3, etc)
+            var isChecked1 = document.getElementById('style1').checked; //Check if checkbox1 is checked or not, then update style when this line is selected/deselected
             document.getElementById(clickedElement.id).classList.toggle('stil1', isChecked1); // also toggle stil2, still3, etc. based on isChecked2, isChecked3, etc.
+
+            var isChecked2 = document.getElementById('style2').checked; 
+            document.getElementById(clickedElement.id).classList.toggle('stil2', isChecked2); 
+
+            var isChecked3 = document.getElementById('style3').checked;
+            document.getElementById(clickedElement.id).classList.toggle('stil3', isChecked3); 
+
+            var isChecked4 = document.getElementById('style4').checked;
+            document.getElementById(clickedElement.id).classList.toggle('stil4', isChecked4); 
+
+            var isChecked5 = document.getElementById('style5').checked;
+            document.getElementById(clickedElement.id).classList.toggle('stil5', isChecked5); 
         }
 
 
